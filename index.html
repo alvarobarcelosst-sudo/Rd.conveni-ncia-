@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0b0b">
+<title>RD Conveniência</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f4f4f2;color:#151515;font-family:Arial,Helvetica,sans-serif}
+header{position:sticky;top:0;z-index:50;background:#0b0b0b;color:#fff;border-bottom:1px solid #2c2411}
+.top{height:72px;display:flex;align-items:center;gap:12px;max-width:1180px;margin:auto;padding:7px 16px}
+.logo{width:56px;height:56px;object-fit:contain;border-radius:50%}.brand{font-weight:900;letter-spacing:.5px;flex:1}
+.search{display:none;background:#1b1b1b;border:1px solid #383838;border-radius:9px;padding:11px 13px;color:white;width:300px}
+.iconbtn{width:43px;height:43px;border:1px solid #4b3d17;border-radius:10px;background:#171717;color:#d7b64b;position:relative}
+.cartnum{position:absolute;right:-5px;top:-6px;background:#d7b64b;color:#000;width:19px;height:19px;border-radius:50%;font-size:11px;font-weight:900;display:grid;place-items:center}
+.nav{display:flex;gap:7px;overflow:auto;max-width:1180px;margin:auto;padding:9px 16px 12px;scrollbar-width:none}.nav a{white-space:nowrap;text-decoration:none;color:#ddd;border:1px solid #343434;border-radius:999px;padding:8px 13px;font-size:13px}.nav a:first-child{background:#d7b64b;color:#080808;border-color:#d7b64b}
+.hero{position:relative;height:min(68vh,620px);min-height:430px;overflow:hidden;background:#111;color:#fff}.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.74),rgba(0,0,0,.16) 70%),linear-gradient(0deg,rgba(0,0,0,.55),transparent 50%)}.heroText{position:absolute;z-index:2;left:5%;bottom:10%;max-width:520px}.heroText h1{font-size:clamp(34px,8vw,65px);margin:0 0 9px}.heroText p{font-size:17px;line-height:1.45;margin:0 0 20px;color:#eee}.gold{display:inline-block;background:#d7b64b;color:#080808;text-decoration:none;padding:13px 20px;border-radius:7px;font-weight:900}
+main{max-width:1180px;margin:auto}.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:20px 16px}.cat{background:#fff;border:1px solid #ddd;border-radius:10px;padding:15px 8px;text-align:center;font-weight:800;font-size:13px;text-decoration:none;color:#222;box-shadow:0 2px 7px #0000000c}.cat:hover{border-color:#d7b64b}
+.sec{padding:18px 16px 36px}.sectop{display:flex;align-items:end;justify-content:space-between;margin-bottom:16px}.sectop h2{margin:0;font-size:25px}.see{font-size:12px;color:#8d711d;text-decoration:none;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{background:#fff;border:1px solid #ddd;border-radius:10px;overflow:hidden;box-shadow:0 2px 9px #00000010}.photo{height:190px;position:relative;background:radial-gradient(circle at 50% 38%,rgba(211,177,73,.13),rgba(70,70,70,.16) 32%,#181818 72%),linear-gradient(145deg,#292929,#101010);display:flex;align-items:center;justify-content:center;padding:12px}.photo img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.06) saturate(1.08);transition:.3s}.card:hover .photo img{transform:scale(1.045)}.data{padding:11px}.catname{font-size:11px;color:#888;margin-bottom:4px}.pname{font-size:14px;font-weight:800;line-height:1.25;min-height:35px}.bottom{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:9px}.price{font-size:17px;font-weight:900}.add{border:0;background:#d7b64b;color:#080808;border-radius:7px;padding:9px 12px;font-weight:900}
+.mediaWrap{padding:0 16px 36px}.media{height:280px;border-radius:13px;overflow:hidden;position:relative;background:#111;margin-bottom:12px}.media video{width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform .15s linear}.media span{position:absolute;left:14px;bottom:13px;background:#0009;color:#fff;padding:7px 10px;border-radius:6px;font-weight:800;font-size:13px}
+.info{background:#101010;color:white;padding:32px 16px}.infoinner{max-width:1180px;margin:auto}.info h2{margin-top:0}.links{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.link{color:white;text-decoration:none;border:1px solid #393939;border-radius:8px;padding:13px;text-align:center}.link strong{color:#d7b64b}
+footer{background:#080808;color:#888;text-align:center;padding:26px 16px;font-size:12px}
+.fab{position:fixed;right:17px;bottom:17px;z-index:90;width:58px;height:58px;border-radius:50%;background:#d7b64b;color:#090909;border:2px solid #f1d77c;box-shadow:0 7px 25px #0008;font-weight:900}
+.drawer{position:fixed;inset:0;background:#0009;z-index:100;display:none}.drawer.open{display:block}.panel{position:absolute;right:0;top:0;bottom:0;width:min(430px,94vw);background:#fff;padding:20px;overflow:auto}.close{float:right;border:0;background:none;font-size:28px}.panel h2{margin-top:0}.line{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #ddd;padding:12px 0}.qty button{border:1px solid #bbb;background:#fff;border-radius:5px;width:28px;height:28px}.total{font-size:21px;font-weight:900;margin:20px 0}.wa{display:block;background:#d7b64b;color:#090909;text-decoration:none;text-align:center;padding:14px;border-radius:8px;font-weight:900}
+@media(min-width:700px){.search{display:block}.cats{grid-template-columns:repeat(7,1fr)}.grid{grid-template-columns:repeat(4,1fr)}.photo{height:225px}.links{grid-template-columns:repeat(4,1fr)}.media{height:400px}}
+</style>
+</head>
+<body>
+<header>
+<div class="top">
+<img class="logo" src="logo.jpeg" alt="RD Conveniência">
+<div class="brand">RD CONVENIÊNCIA</div>
+<input class="search" id="search" placeholder="Buscar produto...">
+<button class="iconbtn" id="cartTop" aria-label="Carrinho">🛒<span class="cartnum" id="count">0</span></button>
+</div>
+<nav class="nav">
+<a href="#inicio">Início</a><a href="#cervejas">Cervejas</a><a href="#destilados">Destilados</a><a href="#energeticos">Energéticos</a><a href="#refrigerantes">Refrigerantes</a><a href="#petiscos">Petiscos</a><a href="#aguas">Águas</a><a href="#gelo">Gelo</a>
+</nav>
+</header>
+
+<section class="hero" id="inicio">
+<video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="poster-bar.jpg"><source src="rd-bar.mp4" type="video/mp4"></video>
+<div class="heroText"><h1>Seu rolê começa aqui.</h1><p>Bebidas, gelo, energéticos e tudo para sua noite. Escolha, adicione ao carrinho e peça pelo WhatsApp.</p><a class="gold" href="#produtos">Comprar agora</a></div>
+</section>
+
+<main>
+<div class="cats">
+<a class="cat" href="#cervejas">Cervejas</a><a class="cat" href="#destilados">Destilados</a><a class="cat" href="#energeticos">Energéticos</a><a class="cat" href="#refrigerantes">Refrigerantes</a><a class="cat" href="#petiscos">Petiscos</a><a class="cat" href="#aguas">Águas</a><a class="cat" href="#gelo">Gelo</a>
+</div>
+
+<section class="sec" id="produtos">
+<div class="sectop"><h2>Mais pedidos</h2><a class="see" href="#produtos">Ver todos</a></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<div class="mediaWrap">
+<div class="media"><video autoplay muted loop playsinline webkit-playsinline preload="auto"><source src="rd-coca.mp4" type="video/mp4"></video><span>Refresque seu rolê</span></div>
+<div class="media"><video autoplay muted loop playsinline webkit-playsinline preload="auto"><source src="rd-cocktail.mp4" type="video/mp4"></video><span>Para todos os momentos</span></div>
+</div>
+</main>
+
+<section class="info"><div class="infoinner">
+<h2>RD Conveniência</h2>
+<p>Estr. Dário Manoel Cardoso, 772 — Ingleses Norte, Florianópolis/SC</p>
+<div class="links">
+<a class="link" href="https://wa.me/5548996484654"><strong>WhatsApp</strong><br>Fazer pedido</a>
+<a class="link" href="https://www.instagram.com/rd_convenienciasc/" target="_blank"><strong>Instagram</strong><br>@rd_convenienciasc</a>
+<a class="link" href="https://www.google.com/maps/search/?api=1&query=Estrada+Dario+Manoel+Cardoso+772+Ingleses+Norte+Florianopolis+SC" target="_blank"><strong>Localização</strong><br>Como chegar</a>
+<a class="link" href="https://search.google.com/local/writereview?placeid=ChIJjz_udoib9gcRXygEoD0R0jo&utm_source=chat" target="_blank"><strong>Avalie</strong><br>Google</a>
+</div>
+</div></section>
+<footer>RD Conveniência • Florianópolis/SC • Aberto até 03:00</footer>
+
+<button class="fab" id="fab">🛒<span class="cartnum" id="count2">0</span></button>
+<div class="drawer" id="drawer"><div class="panel"><button class="close" id="close">×</button><h2>Seu carrinho</h2><div id="items"></div><div class="total" id="total">Total: R$ 0,00</div><a class="wa" id="wa" target="_blank">Finalizar pelo WhatsApp</a></div></div>
+
+<script>
+const P=[
+["Cerveja Heineken 350ml",6.50,"Cervejas","https://express.heineken.com.br/cdn/shop/files/7896045523412_0-b2f37338-1a74-4c7c-8a46-285f04f09f4a.jpg?v=1784310120&width=1200"],
+["Cerveja Budweiser 350ml",4.99,"Cervejas","https://cdn.dlojavirtual.com/static1/106269/sku/thumb_bebidas-cervejas-cerveja-budweiser-lata-350ml-p-1710971052248.png"],
+["Jack Daniel's 1L",129.90,"Destilados","https://carrefourbr.vtexassets.com/arquivos/ids/194169484/186368_1.jpg?v=638894060439630000"],
+["Coca-Cola 350ml",4.50,"Refrigerantes","https://andinacocacola.vtexassets.com/arquivos/ids/159494-800-auto?aspect=true&height=auto&v=639251672561170000&width=800"],
+["Pringles Original 104g",11.90,"Petiscos","https://milium.vtexassets.com/arquivos/ids/263168/Batata-Pringles-Original-Parati-104g-21402.jpg?v=638138820312330000"],
+["Red Bull 250ml",10.00,"Energéticos","https://zaffari.vtexassets.com/arquivos/ids/318967-800-auto?aspect=true&height=auto&v=639192904822670000&width=800"],
+["Água Mineral 500ml",3.00,"Águas","https://images.tcdn.com.br/img/img_prod/1040155/agua_mineral_sem_gas_500ml_1_20240807150627.jpg"],
+["Gelo em cubos 5kg",10.00,"Gelo","https://coopsp.vtexassets.com/arquivos/ids/244615-800-800?aspect=true&height=800&v=638657347832100000&width=800"]
+];
+const cart={};const grid=document.getElementById("grid");
+function money(v){return "R$ "+v.toFixed(2).replace(".",",")}
+function renderProducts(list=P){
+grid.innerHTML=list.map((p,i)=>`<article class="card"><div class="photo"><img src="${p[3]}" alt="${p[0]}"></div><div class="data"><div class="catname">${p[2]}</div><div class="pname">${p[0]}</div><div class="bottom"><span class="price">${money(p[1])}</span><button class="add" onclick="add(${P.indexOf(p)})">Adicionar</button></div></div></article>`).join("");
+}
+function add(i){cart[i]=(cart[i]||0)+1;renderCart()}
+function change(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];renderCart()}
+function renderCart(){let n=0,t=0,s="";Object.keys(cart).forEach(k=>{let q=cart[k],p=P[k];n+=q;t+=q*p[1];s+=`<div class="line"><span><b>${p[0]}</b><br>${money(p[1])}</span><span class="qty"><button onclick="change(${k},-1)">−</button> ${q} <button onclick="change(${k},1)">+</button></span></div>`});document.getElementById("count").textContent=n;document.getElementById("count2").textContent=n;document.getElementById("items").innerHTML=s||"<p>Seu carrinho está vazio.</p>";document.getElementById("total").textContent="Total: "+money(t);let msg="Olá! Quero fazer um pedido na RD Conveniência.\n\n"+Object.keys(cart).map(k=>`${cart[k]}x ${P[k][0]}`).join("\n")+"\n\nTotal: "+money(t);document.getElementById("wa").href="https://wa.me/5548996484654?text="+encodeURIComponent(msg)}
+renderProducts();renderCart();
+const drawer=document.getElementById("drawer");document.getElementById("fab").onclick=()=>drawer.classList.add("open");document.getElementById("cartTop").onclick=()=>drawer.classList.add("open");document.getElementById("close").onclick=()=>drawer.classList.remove("open");drawer.onclick=e=>{if(e.target===drawer)drawer.classList.remove("open")};
+document.getElementById("search").addEventListener("input",e=>{let q=e.target.value.toLowerCase();renderProducts(P.filter(p=>p[0].toLowerCase().includes(q)||p[2].toLowerCase().includes(q)))});
+function playAll(){document.querySelectorAll("video").forEach(v=>{v.muted=true;v.defaultMuted=true;v.autoplay=true;v.setAttribute("muted","");v.setAttribute("autoplay","");v.setAttribute("playsinline","");v.setAttribute("webkit-playsinline","");let p=v.play();if(p)p.catch(()=>{})})}
+["load","pageshow"].forEach(ev=>window.addEventListener(ev,playAll));document.addEventListener("visibilitychange",()=>{if(!document.hidden)playAll()});setTimeout(playAll,100);setTimeout(playAll,700);
+const hero=document.getElementById("heroVideo");window.addEventListener("scroll",()=>{if(hero){let y=window.scrollY;hero.style.transform=`scale(${1+Math.min(y/7000,.035)})`}}, {passive:true});
+</script>
+</body>
+</html>
