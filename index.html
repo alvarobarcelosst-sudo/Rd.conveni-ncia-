@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>RD Conveniência</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080808;color:#fff;font-family:Arial,Helvetica,sans-serif}
+:root{--gold:#e5ae2b;--gold2:#ffd55b}
+.top{height:4px;background:linear-gradient(90deg,#8b6110,#f8d36a,#8b6110)}
+header{position:sticky;top:0;z-index:20;background:rgba(8,8,8,.96);border-bottom:1px solid #202020}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:16px;padding:11px 18px}.logo{width:60px;height:60px;border-radius:50%;object-fit:contain}.brand{font-weight:900}.brand small{display:block;color:var(--gold);font-size:10px;margin-top:3px}.search{margin-left:auto;flex:1;max-width:500px}.search input{width:100%;height:50px;border-radius:15px;border:1px solid #303030;background:#121212;color:white;padding:0 17px;font-size:16px}
+.hero{height:clamp(500px,72vh,700px);position:relative;overflow:hidden;display:flex;align-items:flex-end;background:#050505}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:1;filter:brightness(.88) saturate(1.12)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.27),rgba(0,0,0,.15)),linear-gradient(0deg,rgba(0,0,0,.78),transparent 60%)}
+.hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:auto;padding:60px 22px}.eyebrow{color:var(--gold2);font-weight:900;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(44px,7vw,80px);line-height:.94;max-width:720px;margin:15px 0}.hero p{font-size:18px;line-height:1.5;max-width:650px;color:#eee}.gold{color:var(--gold2)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{min-height:50px;padding:0 21px;border-radius:12px;border:1px solid #444;background:#111;color:white;font-weight:800;display:inline-flex;align-items:center}.btn.primary{background:var(--gold2);color:#080808;border-color:var(--gold2)}
+section{max-width:1200px;margin:auto;padding:56px 18px}.title h2{margin:0 0 8px;font-size:32px}.title p{margin:0 0 23px;color:#929292}
+.video-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}.v{height:260px;border-radius:19px;overflow:hidden;border:1px solid #393939;position:relative;background:#111}.v:first-child{height:315px}.v video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}.v:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.45),transparent 55%)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product{background:linear-gradient(145deg,#171717,#0e0e0e);border:1px solid #493710;border-radius:17px;padding:10px;box-shadow:0 12px 32px rgba(0,0,0,.28);transition:.3s}.product:hover{transform:translateY(-4px);border-color:#80611c}
+.pic{height:200px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;
+background:radial-gradient(circle at 50% 42%,rgba(125,125,125,.22) 0%,rgba(65,65,65,.12) 30%,rgba(19,19,19,.9) 72%),linear-gradient(145deg,#262626,#111)}
+.pic:before{content:"";position:absolute;width:72%;height:72%;border-radius:50%;background:radial-gradient(circle,rgba(255,211,100,.10),transparent 68%);filter:blur(8px)}
+.pic img{position:relative;width:100%;height:100%;object-fit:contain;padding:9px;filter:brightness(1.12) contrast(1.06) saturate(1.12);opacity:1;mix-blend-mode:normal}
+.product .cat{color:#9b9b9b;font-size:10px;letter-spacing:2px;margin:13px 3px 7px}.product h3{font-size:15px;margin:0 3px 9px;min-height:36px}.price{color:var(--gold2);font-size:19px;font-weight:900;margin:0 3px 10px}.add{width:100%;height:43px;border-radius:10px;border:1px solid #624b17;background:#181818;color:white;font-size:18px;font-weight:900}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info div{border:1px solid #292929;border-radius:15px;background:#111;padding:19px}.info h3{margin:0 0 7px}.info p{margin:0;color:#aaa;line-height:1.5}
+.float{position:fixed;right:18px;bottom:18px;z-index:50;width:66px;height:66px;border-radius:50%;border:3px solid #080808;background:var(--gold2);color:#080808;display:grid;place-items:center;font-size:24px;box-shadow:0 16px 45px #000}.count{position:absolute;right:-2px;top:-2px;min-width:24px;height:24px;border-radius:50%;background:white;font-size:12px;font-weight:900;display:grid;place-items:center}
+.panel{position:fixed;right:18px;bottom:96px;z-index:49;width:min(390px,calc(100vw - 36px));background:#111;border:1px solid #594516;border-radius:18px;padding:18px;box-shadow:0 20px 70px #000;display:none}.panel.open{display:block}.line{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #272727}.total{display:flex;justify-content:space-between;font-weight:900;font-size:19px;padding:15px 0}.wa{display:block;text-align:center;padding:14px;background:var(--gold2);color:#080808;border-radius:10px;font-weight:900}
+.reveal{opacity:0;transform:translateY(26px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.video-grid{grid-template-columns:1fr 1fr}.v:first-child{grid-column:1/-1}.info{grid-template-columns:1fr}.brand{display:none}}
+@media(max-width:520px){.nav{padding:9px 13px;gap:9px}.logo{width:53px;height:53px}.search input{height:46px}.hero{height:570px}.hero-content{padding:50px 18px}.hero p{font-size:16px}.video-grid{grid-template-columns:1fr}.v,.v:first-child{height:230px}.products{gap:9px}.pic{height:170px}.product{padding:8px}}
+</style>
+</head>
+<body>
+<div class="top"></div>
+<header><div class="nav"><img class="logo" src="logo.jpeg" alt="RD Conveniência"><div class="brand">RD CONVENIÊNCIA<small>INGLESES • FLORIANÓPOLIS</small></div><div class="search"><input id="q" placeholder="Buscar produto..." oninput="render()"></div></div></header>
+
+<section class="hero">
+<video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture>
+<source src="rd-bar.mp4" type="video/mp4">
+</video>
+<div class="hero-content reveal"><div class="eyebrow">RD CONVENIÊNCIA • INGLESES</div><h1>Seu rolê começa <span class="gold">aqui.</span></h1><p>Bebidas, energéticos, petiscos e gelo. Escolha seus produtos e envie o pedido direto pelo WhatsApp.</p><div class="btns"><a class="btn primary" href="#produtos">Ver cardápio</a><button class="btn" onclick="toggleCart()">Abrir pedido</button></div></div>
+</section>
+
+<section class="reveal"><div class="title"><h2>Experiência RD</h2><p>Conteúdo em movimento enquanto você navega.</p></div><div class="video-grid">
+<div class="v"><video autoplay muted loop playsinline webkit-playsinline preload="auto"><source src="rd-bar.mp4" type="video/mp4"></video></div>
+<div class="v"><video autoplay muted loop playsinline webkit-playsinline preload="auto"><source src="rd-coca.mp4" type="video/mp4"></video></div>
+<div class="v"><video autoplay muted loop playsinline webkit-playsinline preload="auto"><source src="rd-cocktail.mp4" type="video/mp4"></video></div>
+</div></section>
+
+<section id="produtos" class="reveal"><div class="title"><h2>Escolha seus produtos</h2><p>Adicione ao carrinho e finalize pelo WhatsApp.</p></div><div id="grid" class="products"></div></section>
+<section class="reveal"><div class="info"><div><h3>WhatsApp</h3><p>(48) 99648-4654</p></div><div><h3>Localização</h3><p>Estr. Dário Manoel Cardoso, 772 — Ingleses Norte, Florianópolis/SC.</p></div><div><h3>Instagram</h3><p>@rd_convenienciasc</p></div></div></section>
+
+<div id="panel" class="panel"><b>Seu pedido</b><div id="items"></div><div class="total"><span>Total</span><span id="total">R$ 0,00</span></div><a id="wa" class="wa" href="#">Enviar pedido pelo WhatsApp</a></div>
+<button class="float" onclick="toggleCart()" aria-label="Abrir carrinho">🛒<span id="count" class="count">0</span></button>
+
+<script>
+const P=[
+["Cerveja Heineken 350ml",6.5,"Cervejas","https://express.heineken.com.br/cdn/shop/files/7896045523412_0-b2f37338-1a74-4c7c-8a46-285f04f09f4a.jpg?v=1784310120&width=1200"],
+["Cerveja Budweiser 350ml",4.99,"Cervejas","https://cdn.dlojavirtual.com/static1/106269/sku/thumb_bebidas-cervejas-cerveja-budweiser-lata-350ml-p-1710971052248.png"],
+["Jack Daniel's 1L",129.9,"Destilados","https://carrefourbr.vtexassets.com/arquivos/ids/194169484/186368_1.jpg?v=638894060439630000"],
+["Coca-Cola 350ml",4.5,"Refrigerantes","https://andinacocacola.vtexassets.com/arquivos/ids/159494-800-auto?aspect=true&height=auto&v=639251672561170000&width=800"],
+["Pringles Original 104g",11.9,"Petiscos","https://milium.vtexassets.com/arquivos/ids/263168/Batata-Pringles-Original-Parati-104g-21402.jpg?v=638138820312330000"],
+["Red Bull 250ml",10,"Energéticos","https://zaffari.vtexassets.com/arquivos/ids/318967-800-auto?aspect=true&height=auto&v=639192904822670000&width=800"],
+["Água Mineral 500ml",3,"Águas","https://images.tcdn.com.br/img/img_prod/1040155/agua_mineral_sem_gas_500ml_1_20240807150627.jpg"],
+["Gelo em cubos 5kg",10,"Outros","https://coopsp.vtexassets.com/arquivos/ids/244615-800-800?aspect=true&height=800&v=638657347832100000&width=800"]];
+let cart=[];const money=x=>x.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+function render(){let q=document.getElementById("q").value.toLowerCase();document.getElementById("grid").innerHTML=P.filter(x=>x[0].toLowerCase().includes(q)).map((p,i)=>`<article class="product reveal show"><div class="pic"><img src="${p[3]}" alt="${p[0]}" loading="lazy"></div><div class="cat">${p[2]}</div><h3>${p[0]}</h3><div class="price">${money(p[1])}</div><button class="add" onclick="add(${i})">Adicionar</button></article>`).join("")}
+function add(i){cart.push(P[i]);update();document.getElementById("panel").classList.add("open")}
+function update(){let m={};cart.forEach(p=>m[p[0]]=(m[p[0]]||0)+1);document.getElementById("count").textContent=cart.length;document.getElementById("items").innerHTML=Object.entries(m).map(([n,c])=>{let p=P.find(x=>x[0]==n);return `<div class="line"><span>${c}x ${n}</span><b>${money(p[1]*c)}</b></div>`}).join("");let t=cart.reduce((s,p)=>s+p[1],0);document.getElementById("total").textContent=money(t);let msg="Olá, RD Conveniência!\n\nGostaria de fazer este pedido:\n\n"+Object.entries(m).map(([n,c])=>{let p=P.find(x=>x[0]==n);return `${c}x ${n} — ${money(p[1]*c)}`}).join("\n")+`\n\nTotal: ${money(t)}\n\nQuero combinar a entrega/retirada pelo WhatsApp.`;document.getElementById("wa").href="https://wa.me/5548996464654?text="+encodeURIComponent(msg)}
+function toggleCart(){document.getElementById("panel").classList.toggle("open")}
+render();update();
+
+const vids=[...document.querySelectorAll("video")];
+function playNow(v){v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");v.setAttribute("playsinline","");v.setAttribute("webkit-playsinline","");v.setAttribute("autoplay","");let p=v.play();if(p&&p.catch)p.catch(()=>{})}
+vids.forEach(v=>{v.addEventListener("loadedmetadata",()=>playNow(v),{once:true});v.addEventListener("canplay",()=>playNow(v),{once:true});playNow(v)});
+window.addEventListener("load",()=>vids.forEach(playNow));document.addEventListener("visibilitychange",()=>{if(!document.hidden)vids.forEach(playNow)});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.1});document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
+</script>
+</body>
+</html>
