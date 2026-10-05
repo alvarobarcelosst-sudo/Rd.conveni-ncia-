@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070707">
+<title>RD Conveniência | Bebidas geladas nos Ingleses</title>
+<meta name="description" content="Bebidas geladas, cervejas, destilados, energéticos, gelo e petiscos nos Ingleses. Faça seu pedido pelo WhatsApp.">
+<meta property="og:title" content="RD Conveniência | Ingleses Norte">
+<meta property="og:description" content="Bebidas geladas, gelo e petiscos. Peça pelo WhatsApp.">
+<meta property="og:image" content="logo.jpeg">
+<link rel="icon" href="logo.jpeg">
+
+<style>
+:root{
+  --gold:#f1ca52;--gold-soft:#ffe89a;--green:#25d366;--bg:#050505;--surface:#101010;
+  --surface2:#161616;--line:rgba(255,255,255,.09);--muted:#909090;--text:#f8f8f8;
+  --red:#ff4d4d;--shadow:0 25px 70px rgba(0,0,0,.48);--radius:22px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 10% 0%,rgba(241,202,82,.035),transparent 30%),radial-gradient(circle at 90% 35%,rgba(241,202,82,.025),transparent 28%)}
+button,input,select{font:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.ico{width:1em;height:1em;fill:currentColor;flex:none}
+.ico.s{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:100;background:rgba(5,5,5,.78);backdrop-filter:blur(22px) saturate(130%);border-bottom:1px solid rgba(255,255,255,.065);padding-top:env(safe-area-inset-top)}
+.header-main{max-width:1340px;margin:auto;padding:11px 22px;display:flex;align-items:center;gap:14px}
+.logo{width:47px;height:47px;border-radius:50%;object-fit:cover;border:1px solid rgba(241,202,82,.5);box-shadow:0 0 0 5px rgba(241,202,82,.035),0 0 35px rgba(241,202,82,.1)}
+.brand{font-size:14px;font-weight:950;letter-spacing:1.5px;white-space:nowrap}
+.search-area{flex:1;max-width:560px;margin:auto}
+.search-wrap{position:relative}
+.search{width:100%;height:46px;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:rgba(255,255,255,.045);color:#fff;padding:0 45px 0 17px;font-size:14px;outline:none;transition:.25s}
+.search:hover{background:rgba(255,255,255,.065)}
+.search:focus{border-color:rgba(241,202,82,.7);box-shadow:0 0 0 4px rgba(241,202,82,.06)}
+.search::placeholder{color:#707070}
+.search-icon{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#777}
+.cart-button{position:relative;width:47px;height:47px;border:1px solid rgba(241,202,82,.32);border-radius:15px;background:linear-gradient(145deg,#1c1a13,#111);color:var(--gold);cursor:pointer;display:grid;place-items:center;font-size:21px;transition:.22s}
+.cart-button:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 10px 30px rgba(241,202,82,.1)}
+.badge{position:absolute;top:-7px;right:-6px;min-width:21px;height:21px;padding:0 5px;border-radius:50%;background:var(--gold);color:#080808;font-size:10px;font-weight:950;display:grid;place-items:center;border:2px solid #050505}
+.category-bar{border-top:1px solid rgba(255,255,255,.035)}
+.categories{max-width:1340px;margin:auto;padding:9px 22px 11px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.chip{flex:none;color:#999;background:transparent;font-size:11px;font-weight:850;padding:8px 14px;border:1px solid transparent;border-radius:999px;cursor:pointer;transition:.2s}
+.chip:hover{color:#fff;background:#141414}
+.chip[aria-pressed=true]{color:#080808;background:var(--gold);border-color:var(--gold);box-shadow:0 6px 22px rgba(241,202,82,.12)}
+
+/* HERO */
+.hero{position:relative;min-height:650px;height:min(80vh,760px);overflow:hidden;background:#000}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.035)}
+.hero-overlay{position:absolute;inset:0;background:
+linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.82) 28%,rgba(0,0,0,.35) 61%,rgba(0,0,0,.1) 100%),
+linear-gradient(0deg,rgba(0,0,0,.92) 0%,transparent 42%,rgba(0,0,0,.18) 100%),
+radial-gradient(circle at 72% 40%,rgba(241,202,82,.13),transparent 27%)}
+.hero-content{position:relative;z-index:2;max-width:1340px;height:100%;margin:auto;padding:45px 22px;display:flex;align-items:center}
+.hero-box{max-width:690px}
+.kicker{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(241,202,82,.25);background:rgba(8,8,8,.58);backdrop-filter:blur(14px);border-radius:999px;color:var(--gold);font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:20px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#41ef7b;box-shadow:0 0 0 5px rgba(65,239,123,.08)}
+.hero h1{margin:0 0 17px;font-size:clamp(50px,7.3vw,88px);line-height:.88;letter-spacing:-4px;font-weight:1000}
+.hero h1 span{color:var(--gold);text-shadow:0 0 40px rgba(241,202,82,.09)}
+.hero p{margin:0 0 27px;color:#d2d2d2;line-height:1.55;font-size:16px;max-width:525px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--gold);color:#080808;text-decoration:none;font-weight:950;padding:14px 20px;border-radius:13px;border:1px solid rgba(255,255,255,.08);font-size:13px;cursor:pointer;transition:.22s;box-shadow:0 10px 30px rgba(241,202,82,.12)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05);box-shadow:0 14px 35px rgba(241,202,82,.17)}
+.btn.wpp{background:var(--green);box-shadow:0 10px 30px rgba(37,211,102,.1)}
+.btn.ghost{background:rgba(10,10,10,.5);color:#fff;border-color:rgba(255,255,255,.17);box-shadow:none}
+.hero-bottom{position:absolute;z-index:3;left:22px;right:22px;bottom:24px;max-width:1340px;margin:auto;display:flex;gap:7px;flex-wrap:wrap}
+.hero-pill{display:flex;align-items:center;gap:7px;background:rgba(8,8,8,.54);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);padding:8px 11px;border-radius:999px;font-size:10px;color:#cfcfcf;font-weight:850}
+.hero-pill b{color:var(--gold)}
+
+/* LAYOUT */
+.container{max-width:1340px;margin:auto;padding:0 22px}
+.section{padding:54px 0 8px}
+.section-header{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:21px}
+.section-title{margin:0;font-size:30px;letter-spacing:-1px;font-weight:950}
+.section-sub{margin:6px 0 0;color:#777;font-size:12px}
+.section-link{color:var(--gold);font-size:11px;font-weight:900;text-decoration:none;white-space:nowrap}
+
+/* HIGHLIGHTS */
+.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:-1px}
+.highlight{min-height:101px;border:1px solid rgba(255,255,255,.075);border-radius:18px;padding:16px;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));display:flex;gap:12px;align-items:center;transition:.22s}
+.highlight:hover{transform:translateY(-3px);border-color:rgba(241,202,82,.2)}
+.highlight-icon{width:43px;height:43px;border-radius:13px;background:rgba(241,202,82,.08);color:var(--gold);display:grid;place-items:center;font-size:20px;flex:none}
+.highlight strong{display:block;font-size:13px;margin-bottom:4px}.highlight span{color:#777;font-size:10px;line-height:1.4}
+
+/* PREMIUM PRODUCT GRID */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.product{position:relative;background:linear-gradient(145deg,#151515,#0d0d0d);border:1px solid rgba(255,255,255,.075);border-radius:21px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 9px 35px rgba(0,0,0,.18);transition:transform .28s,border-color .28s,box-shadow .28s}
+.product:hover{transform:translateY(-6px);border-color:rgba(241,202,82,.32);box-shadow:0 25px 65px rgba(0,0,0,.45)}
+.product-photo{position:relative;height:245px;background:
+radial-gradient(circle at 50% 50%,rgba(241,202,82,.085),transparent 38%),
+radial-gradient(circle at 50% 120%,rgba(241,202,82,.06),transparent 48%),
+linear-gradient(145deg,#090909,#141414);
+display:flex;align-items:center;justify-content:center;padding:18px;overflow:hidden}
+.product-photo:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:1px solid rgba(241,202,82,.07);box-shadow:0 0 80px rgba(241,202,82,.06)}
+.product-photo:after{content:"";position:absolute;left:15%;right:15%;bottom:-35px;height:75px;background:rgba(241,202,82,.08);filter:blur(25px);border-radius:50%}
+.product-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 18px 17px rgba(0,0,0,.82));transition:transform .35s}
+.product:hover .product-photo img{transform:scale(1.075) translateY(-2px)}
+.product-badge{position:absolute;z-index:2;left:12px;top:12px;background:var(--gold);color:#080808;padding:6px 9px;border-radius:999px;font-size:8px;font-weight:950;text-transform:uppercase;letter-spacing:.7px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.product-badge.red{background:#ff4e4e;color:#fff}
+.product-info{padding:15px 15px 16px;display:flex;flex-direction:column;flex:1}
+.product-category{font-size:9px;color:#666;font-weight:900;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.product-name{font-size:14px;line-height:1.3;font-weight:900;min-height:38px}
+.product-bottom{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-top:15px}
+.product-price{font-size:21px;font-weight:1000;color:var(--gold);letter-spacing:-.5px}
+.product-price small{display:block;font-size:8px;color:#666;font-weight:700;letter-spacing:0;margin-top:1px}
+.add-button{border:1px solid rgba(241,202,82,.45);background:rgba(241,202,82,.08);color:var(--gold);border-radius:11px;padding:10px 12px;font-size:10px;font-weight:950;cursor:pointer;transition:.2s}
+.add-button:hover{background:var(--gold);color:#080808;transform:translateY(-1px)}
+.empty{grid-column:1/-1;text-align:center;padding:55px 10px;color:#777}
+.empty .btn{margin-top:13px}
+
+/* FEATURED STRIP */
+.media-section{margin-top:48px;padding:55px 0;background:
+radial-gradient(circle at 50% 0,rgba(241,202,82,.045),transparent 30%),linear-gradient(180deg,#080808,#101010 50%,#080808);
+border-top:1px solid rgba(255,255,255,.055);border-bottom:1px solid rgba(255,255,255,.055)}
+.videos{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.video-card{position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:20px;background:#000;border:1px solid rgba(255,255,255,.09);box-shadow:var(--shadow)}
+.video-card:first-child{aspect-ratio:16/11}
+.video-card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.video-card:hover video{transform:scale(1.05)}
+.video-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 60%)}
+.video-label{position:absolute;z-index:2;left:14px;bottom:14px;background:rgba(0,0,0,.55);backdrop-filter:blur(12px);padding:8px 11px;border:1px solid rgba(255,255,255,.12);border-radius:10px;font-weight:900;font-size:11px}
+
+/* INFO */
+.info-section{padding:55px 0;background:#080808}
+.info-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.info-box{display:flex;flex-direction:column;gap:6px;border:1px solid rgba(255,255,255,.075);background:linear-gradient(145deg,#131313,#0d0d0d);border-radius:17px;padding:17px;text-decoration:none;color:var(--text);transition:.22s}
+a.info-box:hover{transform:translateY(-3px);border-color:rgba(241,202,82,.3)}
+.info-icon{width:42px;height:42px;border-radius:12px;background:rgba(241,202,82,.08);color:var(--gold);display:grid;place-items:center;font-size:19px;margin-bottom:7px}
+.info-icon.green{background:rgba(37,211,102,.08);color:var(--green)}
+.info-box strong{font-size:13px}.info-box span{color:#747474;font-size:10px;line-height:1.45}
+
+/* FOOTER + FLOATING CART */
+.footer{background:#030303;color:#666;text-align:center;padding:31px 18px calc(35px + env(safe-area-inset-bottom));font-size:10px;line-height:1.7;border-top:1px solid rgba(255,255,255,.05)}
+.footer b{color:#ccc}
+.fab{position:fixed;z-index:90;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));height:57px;padding:0 18px;border:1px solid rgba(255,255,255,.2);border-radius:29px;background:var(--gold);color:#080808;display:flex;align-items:center;gap:8px;font-weight:950;font-size:12px;box-shadow:0 15px 45px rgba(0,0,0,.6),0 0 0 6px rgba(241,202,82,.04);cursor:pointer;transition:.22s}
+.fab:hover{transform:translateY(-3px);box-shadow:0 20px 55px rgba(0,0,0,.7),0 0 0 8px rgba(241,202,82,.04)}
+.fab.pulse{animation:pulse 1.9s infinite}.fab .ico{font-size:21px}.fab.hide{display:none}
+@keyframes pulse{0%,100%{box-shadow:0 15px 45px rgba(0,0,0,.6),0 0 0 0 rgba(241,202,82,.2)}50%{box-shadow:0 15px 45px rgba(0,0,0,.6),0 0 0 8px rgba(241,202,82,0)}}
+
+/* CART */
+.drawer{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.76);backdrop-filter:blur(8px);visibility:hidden;opacity:0;transition:.22s}
+.drawer.open{visibility:visible;opacity:1}
+.cart-panel{position:absolute;right:0;top:0;bottom:0;width:min(470px,100vw);background:linear-gradient(180deg,#141414,#0d0d0d);border-left:1px solid rgba(255,255,255,.09);padding:21px 20px calc(20px + env(safe-area-inset-bottom));overflow:auto;transform:translateX(100%);transition:transform .3s ease;box-shadow:-30px 0 80px rgba(0,0,0,.35)}
+.drawer.open .cart-panel{transform:none}
+.cart-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.08)}.cart-head h2{margin:0;font-size:23px;letter-spacing:-.5px}
+.close{border:1px solid rgba(255,255,255,.08);background:#191919;color:#fff;width:38px;height:38px;border-radius:11px;font-size:25px;line-height:1;cursor:pointer}
+.cart-line{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.065)}
+.quantity{white-space:nowrap;display:flex;align-items:center;gap:7px}.quantity button{width:33px;height:33px;border:1px solid #363636;background:#1b1b1b;color:#fff;border-radius:9px;font-size:18px;cursor:pointer}
+.form{display:grid;gap:10px;margin-top:19px}.form label{font-size:10px;color:#999;font-weight:850;display:grid;gap:6px}
+.form input,.form select{height:45px;border:1px solid #333;border-radius:11px;padding:0 12px;font-size:14px;font-family:inherit;background:#181818;color:#fff}
+.form input:focus,.form select:focus{border-color:var(--gold);outline:none}
+.cart-total{font-size:24px;font-weight:1000;margin:22px 0 14px;color:var(--gold)}
+.wa{width:100%;padding:15px}.wa[aria-disabled=true]{opacity:.4;pointer-events:none}
+.note{font-size:9px;color:#666;margin:10px 0 0;line-height:1.5}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#f5f5f5;color:#111;padding:11px 17px;border-radius:11px;font-size:11px;font-weight:950;opacity:0;pointer-events:none;transition:.25s;z-index:300;white-space:nowrap;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* RESPONSIVE */
+@media(max-width:1050px){
+  .products{grid-template-columns:repeat(3,1fr)}.info-grid{grid-template-columns:repeat(3,1fr)}.highlights{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:780px){
+  .products{grid-template-columns:repeat(2,1fr);gap:10px}
+  .videos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -12px;padding:0 12px;scrollbar-width:none}.videos::-webkit-scrollbar{display:none}
+  .video-card,.video-card:first-child{flex:0 0 82%;aspect-ratio:4/5;scroll-snap-align:start}
+  .info-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .header-main{padding:7px 12px;gap:9px;flex-wrap:wrap}.logo{width:43px;height:43px}.brand{font-size:12px;flex:1;letter-spacing:1.1px}
+  .search-area{order:3;flex:0 0 100%;max-width:none;padding-bottom:3px}.search{height:44px}
+  .category-bar{background:#080808}.categories{padding:8px 12px}
+  .hero{min-height:570px;height:74vh}.hero-content{align-items:flex-end;padding:0 12px 79px}
+  .hero h1{font-size:50px;letter-spacing:-2.8px}.hero p{font-size:13px;max-width:390px}.kicker{font-size:9px;margin-bottom:15px}
+  .hero-bottom{left:12px;right:12px;bottom:15px;gap:5px}.hero-pill{font-size:9px;padding:8px 9px}
+  .container{padding:0 12px}.section{padding:40px 0 6px}.section-title{font-size:23px}.section-header{margin-bottom:14px}
+  .product{border-radius:16px}.product-photo{height:170px;padding:9px}.product-info{padding:11px}.product-name{font-size:12.5px;min-height:35px}.product-price{font-size:18px}.add-button{padding:9px 10px;font-size:9px}
+  .highlights{grid-template-columns:1fr 1fr;gap:7px}.highlight{min-height:88px;padding:11px;border-radius:14px}.highlight-icon{width:35px;height:35px;border-radius:10px;font-size:17px}.highlight strong{font-size:11px}.highlight span{font-size:8.5px}
+  .media-section{padding:40px 0}.info-grid{grid-template-columns:1fr}.info-box{border-radius:14px}
+  html{scroll-padding-top:185px}
+}
+@media(max-width:380px){
+  .hero h1{font-size:44px}.products{gap:8px}.product-photo{height:148px}.product-info{padding:9px}.product-price{font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-wpp" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.78a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></symbol>
+<symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"/><circle cx="19" cy="20" r="1"/><path d="M3 4h2l2.4 11.5a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 2-1.6L21 8H6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 10-13h-7z"/></symbol>
+</svg>
+
+<header class="header">
+  <div class="header-main">
+    <img class="logo" src="logo.jpeg" alt="Logo RD Conveniência" width="48" height="48">
+    <div class="brand">RD CONVENIÊNCIA</div>
+    <div class="search-area">
+      <div class="search-wrap">
+        <input class="search" id="search" type="search" placeholder="Buscar bebida, gelo, petisco..." aria-label="Buscar produtos">
+        <svg class="ico s search-icon"><use href="#i-search"/></svg>
+      </div>
+    </div>
+    <button class="cart-button" id="cartTop" aria-label="Abrir carrinho">
+      <svg class="ico s"><use href="#i-cart"/></svg><span class="badge" id="count">0</span>
+    </button>
+  </div>
+  <div class="category-bar"><nav class="categories" id="chips" aria-label="Categorias"></nav></div>
+</header>
+
+<section class="hero" id="inicio">
+  <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="poster-bar.jpg">
+    <source src="rd-bar.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-box">
+      <div class="kicker"><span class="live-dot"></span> Ingleses Norte · Florianópolis</div>
+      <h1>Seu rolê.<br><span>Do seu jeito.</span></h1>
+      <p>Bebidas geladas, gelo, energéticos e petiscos para chegar na sua porta. Escolha, monte o carrinho e mande o pedido pelo WhatsApp.</p>
+      <div class="actions">
+        <a class="btn" href="#produtos">Ver produtos</a>
+        <a class="btn wpp" href="https://wa.me/5548996484654" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wpp"/></svg> Pedir pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-pill"><b>✓</b> Pedido fácil</div>
+    <div class="hero-pill"><b>✓</b> Bebidas geladas</div>
+    <div class="hero-pill"><b>✓</b> WhatsApp</div>
+  </div>
+</section>
+
+<main class="container">
+  <section class="section" style="padding-top:28px">
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-icon"><svg class="ico"><use href="#i-bolt"/></svg></div><div><strong>Prático</strong><span>Monte seu pedido em poucos toques.</span></div></div>
+      <div class="highlight"><div class="highlight-icon">❄</div><div><strong>Gelado</strong><span>Perfeito para praia, festa e resenha.</span></div></div>
+      <div class="highlight"><div class="highlight-icon">🛒</div><div><strong>Seu carrinho</strong><span>Confira tudo antes de enviar.</span></div></div>
+      <div class="highlight"><div class="highlight-icon"><svg class="ico"><use href="#i-wpp"/></svg></div><div><strong>Direto no WhatsApp</strong><span>Finalize o pedido com a loja.</span></div></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:30px">
+    <div style="position:relative;overflow:hidden;border:1px solid rgba(241,202,82,.18);border-radius:22px;background:linear-gradient(100deg,#17140a,#0e0e0e 62%,#17140a);padding:22px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px">
+      <div style="position:absolute;width:180px;height:180px;border-radius:50%;right:-65px;top:-85px;background:rgba(241,202,82,.07);filter:blur(3px)"></div>
+      <div style="position:relative;z-index:1">
+        <div style="font-size:9px;font-weight:950;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">⚡ Destaques da RD</div>
+        <div style="font-size:22px;font-weight:950;letter-spacing:-.6px">Bebida gelada + gelo = resenha pronta.</div>
+        <div style="font-size:11px;color:#777;margin-top:5px">Escolha seus favoritos e mande o carrinho pelo WhatsApp.</div>
+      </div>
+      <a href="#produtos" class="btn" style="position:relative;z-index:1;white-space:nowrap;padding:12px 16px">Montar pedido</a>
+    </div>
+  </section>
+
+  <section class="section" id="produtos">
+    <div class="section-header">
+      <div><h2 class="section-title" id="listTitle">Mais pedidos</h2><p class="section-sub" id="listSub">Os favoritos da RD Conveniência.</p></div>
+      <a class="section-link" href="#contato">Fale com a RD →</a>
+    </div>
+    <div class="products" id="grid" aria-live="polite"></div>
+  </section>
+</main>
+
+<section class="media-section">
+  <div class="container">
+    <div class="section-header">
+      <div><h2 class="section-title">A vibe da RD</h2><p class="section-sub">Bebidas, rolê e aquele clima de conveniência.</p></div>
+    </div>
+    <div class="videos">
+      <div class="video-card"><video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="poster-bar.jpg"><source src="rd-bar.mp4" type="video/mp4"></video><div class="video-label">RD Conveniência</div></div>
+      <div class="video-card"><video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="poster-coca.jpg"><source src="rd-coca.mp4" type="video/mp4"></video><div class="video-label">Bebidas geladas</div></div>
+      <div class="video-card"><video autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="poster-cocktail.jpg"><source src="rd-cocktail.mp4" type="video/mp4"></video><div class="video-label">Drinks e coquetéis</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section" id="contato">
+  <div class="container">
+    <div class="section-header"><div><h2 class="section-title">Fale com a gente</h2><p class="section-sub">Ingleses Norte · Florianópolis/SC</p></div></div>
+    <div class="info-grid">
+      <a class="info-box" href="https://wa.me/5548996484654" target="_blank" rel="noopener"><div class="info-icon green"><svg class="ico"><use href="#i-wpp"/></svg></div><strong>WhatsApp</strong><span>(48) 99648-4654<br>Faça seu pedido direto.</span></a>
+      <a class="info-box" href="https://www.instagram.com/rd_convenienciasc/" target="_blank" rel="noopener"><div class="info-icon"><svg class="ico s"><use href="#i-insta"/></svg></div><strong>Instagram</strong><span>@rd_convenienciasc</span></a>
+      <a class="info-box" href="https://www.google.com/maps/search/?api=1&query=Estrada+Dario+Manoel+Cardoso+772+Ingleses+Norte+Florianopolis+SC" target="_blank" rel="noopener"><div class="info-icon"><svg class="ico s"><use href="#i-pin"/></svg></div><strong>Como chegar</strong><span>Estr. Dário Manoel Cardoso, 772<br>Abrir no Google Maps.</span></a>
+      <a class="info-box" href="https://search.google.com/local/writereview?placeid=ChIJjz_udoib9gcRXygEoD0R0jo" target="_blank" rel="noopener"><div class="info-icon"><svg class="ico"><use href="#i-star"/></svg></div><strong>Avalie no Google</strong><span>Deixe sua avaliação.</span></a>
+      <div class="info-box"><div class="info-icon"><svg class="ico s"><use href="#i-clock"/></svg></div><strong>Horário</strong><span>Aberto até 03:00.</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><b>RD Conveniência</b> · Ingleses Norte · Florianópolis/SC<br>Venda de bebidas alcoólicas proibida para menores de 18 anos.</footer>
+
+<button class="fab" id="fab" aria-label="Abrir carrinho"><svg class="ico s"><use href="#i-cart"/></svg><span id="fabTotal">Carrinho</span></button>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <div class="cart-panel">
+    <div class="cart-head"><h2 id="cartTitle">Seu carrinho</h2><button class="close" id="close" aria-label="Fechar carrinho">×</button></div>
+    <div id="items"></div>
+    <div class="form">
+      <label>Seu nome<input id="name" autocomplete="name" placeholder="Como podemos te chamar?"></label>
+      <label>Como você quer receber?<select id="mode"><option value="entrega">Entrega</option><option value="retirada">Retirar na loja</option></select></label>
+      <label id="addrWrap">Endereço de entrega<input id="addr" autocomplete="street-address" placeholder="Rua, número e bairro"></label>
+      <label>Pagamento<select id="pay"><option>Pix</option><option>Cartão</option><option>Dinheiro</option></select></label>
+    </div>
+    <div class="cart-total" id="total">Total: R$ 0,00</div>
+    <a class="btn wpp wa" id="wa" target="_blank" rel="noopener" aria-disabled="true"><svg class="ico"><use href="#i-wpp"/></svg>Enviar pedido pelo WhatsApp</a>
+    <p class="note">A taxa de entrega e a confirmação do pedido são combinadas com a loja pelo WhatsApp.</p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const P=[
+  ["Cerveja Heineken 350ml",6.50,"Cervejas","heineken.PNG","Mais pedida"],
+  ["Cerveja Budweiser 350ml",4.99,"Cervejas","budweiser.PNG","Oferta"],
+  ["Jack Daniel's 1L",129.90,"Destilados","jack.PNG","Destaque"],
+  ["Coca-Cola 350ml",4.50,"Refrigerantes","coca.png","Clássico"],
+  ["Pringles Original 104g",11.90,"Petiscos","pringles.PNG","Petisco"],
+  ["Red Bull 250ml",10.00,"Energéticos","redbull.PNG","Energia"],
+  ["Água Mineral 500ml",3.00,"Águas","agua.PNG","Gelada"],
+  ["Gelo em cubos 5kg",10.00,"Gelo","gelo.PNG","Essencial"]
+];
+const CATS=["Todos","Cervejas","Destilados","Energéticos","Refrigerantes","Petiscos","Águas","Gelo"];
+const PHONE="5548996484654";
+const $=id=>document.getElementById(id);
+const money=v=>"R$ "+v.toFixed(2).replace(".",",");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let cart={},cat="Todos",q="";
+try{cart=JSON.parse(localStorage.getItem("rd-cart")||"{}")}catch(e){}
+Object.keys(cart).forEach(k=>{if(!P[k]||!(cart[k]>0))delete cart[k]});
+
+function imageFallback(img){
+  const original=img.dataset.original||img.getAttribute("src")||"";
+  const dot=original.lastIndexOf(".");
+  if(dot<0){img.style.display="none";return}
+  const stem=original.slice(0,dot),ext=original.slice(dot+1);
+  const variants=[original,stem+"."+ext.toLowerCase(),stem+"."+ext.toUpperCase(),stem.toLowerCase()+".png",stem.toLowerCase()+".PNG",stem.toUpperCase()+".png",stem.toUpperCase()+".PNG"];
+  const n=Number(img.dataset.try||0);
+  if(n+1<variants.length){img.dataset.try=n+1;img.src=variants[n+1]}
+  else{img.style.display="none";img.parentElement.insertAdjacentHTML("beforeend",'<span style="color:#666;font-size:11px">Imagem indisponível</span>')}
+}
+function renderChips(){
+  $("chips").innerHTML=CATS.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-cat="${c}">${c}</button>`).join("");
+}
+function renderProducts(){
+  const list=P.map((p,i)=>({p,i})).filter(({p})=>(cat==="Todos"||p[2]===cat)&&(!q||(p[0]+" "+p[2]).toLowerCase().includes(q)));
+  $("listTitle").textContent=q?"Resultados da busca":(cat==="Todos"?"Mais pedidos":cat);
+  $("listSub").textContent=cat==="Todos"&&!q?"Os favoritos da RD Conveniência.":list.length+(list.length===1?" produto":" produtos");
+  $("grid").innerHTML=list.length?list.map(({p,i})=>{
+    const red=p[4]==="Oferta";
+    return `<article class="product">
+      <div class="product-photo">
+        <span class="product-badge ${red?"red":""}">${esc(p[4])}</span>
+        <img src="${esc(p[3])}" data-original="${esc(p[3])}" alt="${esc(p[0])}" loading="lazy" onerror="imageFallback(this)">
+      </div>
+      <div class="product-info">
+        <div class="product-category">${esc(p[2])}</div>
+        <div class="product-name">${esc(p[0])}</div>
+        <div class="product-bottom">
+          <span class="product-price">${money(p[1])}<small>por unidade</small></span>
+          <button class="add-button" data-add="${i}" aria-label="Adicionar ${esc(p[0])}">${cart[i] ? cart[i]+" no carrinho" : "+ Adicionar"}</button>
+        </div>
+      </div>
+    </article>`
+  }).join(""):`<div class="empty">Nenhum produto encontrado.<br><button class="btn" id="clear">Ver todos os produtos</button></div>`;
+}
+function save(){try{localStorage.setItem("rd-cart",JSON.stringify(cart))}catch(e){}}
+function toast(t){const el=$("toast");el.textContent=t;el.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("show"),1400)}
+function change(i,d){cart[i]=(cart[i]||0)+d;if(cart[i]<=0)delete cart[i];save();renderCart()}
+function renderCart(){
+  let n=0,total=0,html="";
+  Object.keys(cart).forEach(i=>{const c=cart[i],p=P[i];n+=c;total+=c*p[1];html+=`<div class="cart-line"><span><b>${esc(p[0])}</b><br>${money(p[1])} · ${money(p[1]*c)}</span><span class="quantity"><button data-chg="${i}" data-d="-1" aria-label="Diminuir">−</button><b>${c}</b><button data-chg="${i}" data-d="1" aria-label="Aumentar">+</button></span></div>`});
+  $("count").textContent=n;
+  $("fabTotal").textContent=n?money(total):"Carrinho";
+  $("items").innerHTML=html||"<p style='color:#777'>Seu carrinho está vazio. Adicione produtos para montar o pedido.</p>";
+  $("total").textContent="Total: "+money(total);
+  $("addrWrap").style.display=$("mode").value==="entrega"?"grid":"none";
+  const wa=$("wa");wa.setAttribute("aria-disabled",n?"false":"true");
+  $("fab").classList.toggle("pulse",n>0);
+  if(!n){wa.removeAttribute("href");return}
+  let m="Olá! Quero fazer um pedido na RD Conveniência.\n\n";
+  Object.keys(cart).forEach(i=>{m+=cart[i]+"x "+P[i][0]+" — "+money(P[i][1]*cart[i])+"\n"});
+  m+="\nTotal dos produtos: "+money(total);
+  const name=$("name").value.trim(),addr=$("addr").value.trim();
+  if(name)m+="\nNome: "+name;
+  m+="\nRecebimento: "+($("mode").value==="entrega"?"Entrega"+(addr?" — "+addr:""):"Retirar na loja");
+  m+="\nPagamento: "+$("pay").value;
+  wa.href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);
+}
+function openCart(){$("drawer").classList.add("open");document.body.classList.add("lock");$("fab").classList.add("hide");setTimeout(()=>$("close").focus(),100)}
+function closeCart(){$("drawer").classList.remove("open");document.body.classList.remove("lock");$("fab").classList.remove("hide")}
+
+document.addEventListener("click",e=>{
+  const t=e.target.closest("button");if(!t)return;
+  if(t.dataset.cat){cat=t.dataset.cat;q="";$("search").value="";renderChips();renderProducts();$("produtos").scrollIntoView({behavior:"smooth"});return}
+  if(t.dataset.add){change(t.dataset.add,1);toast("✓ Adicionado ao carrinho");return}
+  if(t.dataset.chg){change(t.dataset.chg,+t.dataset.d);return}
+  if(t.id==="clear"){cat="Todos";q="";$("search").value="";renderChips();renderProducts()}
+});
+$("search").addEventListener("input",function(){q=this.value.toLowerCase().trim();if(q)cat="Todos";renderChips();renderProducts()});
+["name","addr","mode","pay"].forEach(id=>$(id).addEventListener("input",renderCart));
+$("fab").onclick=openCart;$("cartTop").onclick=openCart;$("close").onclick=closeCart;
+$("drawer").onclick=e=>{if(e.target===$("drawer"))closeCart()};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCart()});
+
+function playVideos(){
+  document.querySelectorAll("video").forEach(v=>{
+    v.muted=true;v.defaultMuted=true;
+    const p=v.play();if(p&&p.catch)p.catch(()=>{});
+  });
+}
+window.addEventListener("load",playVideos);
+window.addEventListener("pageshow",playVideos);
+document.addEventListener("touchstart",playVideos,{once:true,passive:true});
+document.addEventListener("click",playVideos,{once:true});
+
+renderChips();renderProducts();renderCart();
+</script>
+</body>
+</html>
